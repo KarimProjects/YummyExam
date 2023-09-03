@@ -471,6 +471,7 @@ function displaySearchedMeals(arr) {
 
 function searchPage() {
   Search.classList.remove("d-none");
+  Recipe.classList.add("d-none");
   searchNameInput.addEventListener("keyup", async function () {
     let mealName = searchNameInput.value;
     let response = await fetch(
@@ -483,6 +484,15 @@ function searchPage() {
     }
     displaySearchedMeals(mealsNameArr);
     meals = Array.from(document.querySelectorAll(".meal"));
+    for (let i = 0; i < mealsNameArr.length; i++) {
+      meals[i].addEventListener("click", async function () {
+        Recipe.classList.remove("d-none");
+        Search.classList.add("d-none");
+        mealId = mealsNameArr[i].idMeal;
+        let recipe = await getRecipe(mealId);
+        displayRecipe(recipe);
+      });
+    }
   });
 
   searchLetterInput.addEventListener("keyup", async function () {
@@ -499,17 +509,16 @@ function searchPage() {
     }
     displaySearchedMeals(mealsNameArr);
     meals = Array.from(document.querySelectorAll(".meal"));
+    for (let i = 0; i < mealsNameArr.length; i++) {
+      meals[i].addEventListener("click", async function () {
+        Recipe.classList.remove("d-none");
+        Search.classList.add("d-none");
+        mealId = mealsNameArr[i].idMeal;
+        let recipe = await getRecipe(mealId);
+        displayRecipe(recipe);
+      });
+    }
   });
-
-  for (let i = 0; i < mealsNameArr.length; i++) {
-    meals[i].addEventListener("click", async function () {
-      Recipe.classList.remove("d-none");
-      Search.classList.add("d-none");
-      mealId = mealsNameArr[i].idMeal;
-      let recipe = await getRecipe(mealId);
-      displayRecipe(recipe);
-    });
-  }
 }
 
 // ?==================================
@@ -535,16 +544,17 @@ function displayHomeMeals(arr) {
 }
 
 async function homePage() {
-  let mealName = "";
+  Recipe.classList.add("d-none");
+  Home.classList.remove("d-none");
   let response = await fetch(
-    `https://www.themealdb.com/api/json/v1/1/search.php?s=${mealName}`
+    `https://www.themealdb.com/api/json/v1/1/search.php?s=`
   );
   let data = await response.json();
   mealsNameArr = data.meals;
   if (mealsNameArr.length > 20) {
     mealsNameArr = mealsNameArr.slice(0, 20);
   }
-  displaySearchedMeals(mealsNameArr);
+  displayHomeMeals(mealsNameArr);
   meals = Array.from(document.querySelectorAll(".meal"));
   for (let i = 0; i < mealsNameArr.length; i++) {
     meals[i].addEventListener("click", async function () {
@@ -556,3 +566,7 @@ async function homePage() {
     });
   }
 }
+
+(async function () {
+  await homePage();
+})();
