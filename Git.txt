@@ -1,0 +1,6 @@
+git init
+git remote add origin https://github.com/xxxx/xxxxx.git
+git add .
+git commit -m "initial commit"
+git log
+git push origin master

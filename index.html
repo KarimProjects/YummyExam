@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <!-- <link rel="shortcut icon" href="" type="image/x-icon" /> -->
+    <!-- ?======== Stylesheet Files ========= -->
+    <link rel="stylesheet" href="./css/all.min.css" />
+    <link rel="stylesheet" href="./css/bootstrap.min.css" />
+    <link rel="stylesheet" href="./css/style.css" />
+  </head>
+  <body>
+    <!-- ?========== NavBar ========== -->
+    <nav class="navbar navbar-expand-lg bg-body-tertiary">
+      <div class="container">
+        <a class="navbar-brand fw-bold" href="#Home">Yummy</a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarSupportedContent"
+          aria-controls="navbarSupportedContent"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+            <li class="nav-item">
+              <a class="nav-link" aria-current="page" href="#Home">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#Search">Search</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#Categories">Categories</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#Area">Area</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#Ingredients">Ingredients</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#Contact">Contact Us</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <!-- ?========== Recipe ========== -->
+    <div id="Recipe" class="d-none">
+      <div class="container text-white py-5">
+        <div class="row g-4"></div>
+      </div>
+    </div>
+
+    <!-- ? ======== Categories ========= -->
+    <div id="Categories" class="d-none">
+      <div class="container py-5">
+        <div class="row g-4"></div>
+      </div>
+    </div>
+    <div id="MealsByCategory" class="d-none">
+      <div class="container py-5">
+        <div class="row g-4"></div>
+      </div>
+    </div>
+
+    <!-- ? =========== Area ============ -->
+    <div id="Area" class="d-none">
+      <div class="container py-5">
+        <div class="row g-4"></div>
+      </div>
+    </div>
+    <div id="MealsByArea" class="d-none">
+      <div class="container py-5">
+        <div class="row g-4"></div>
+      </div>
+    </div>
+
+    <!-- ? ======== Ingredients ========= -->
+    <div id="Ingredients" class="d-none">
+      <div class="container py-5">
+        <div class="row g-4"></div>
+      </div>
+    </div>
+    <div id="MealsByIngredient" class="d-none">
+      <div class="container py-5">
+        <div class="row g-4"></div>
+      </div>
+    </div>
+
+    <!-- ?========== Search ========== -->
+    <div id="Search" class="d-none">
+      <div class="container text-white py-5">
+        <div class="row g-4 mb-4 p-3">
+          <div class="col-md-6">
+            <input
+              type="text"
+              class="form-control search-name-input"
+              placeholder="Search by Name"
+            />
+          </div>
+          <div class="col-md-6">
+            <input
+              type="text"
+              class="form-control search-letter-input"
+              placeholder="Search By Firstletter"
+            />
+          </div>
+        </div>
+        <div class="row g-4 searched-meals"></div>
+      </div>
+    </div>
+
+    <!-- ?========== Home ========== -->
+    <div id="Home">
+      <div class="row g-4"></div>
+    </div>
+    </div>
+    <!-- ?========== Script Files =========== -->
+    <script src="./js/bootstrap.bundle.min.js"></script>
+    <script src="./js/jquery-3.7.0.min.js"></script>
+    <script src="./js/main.js"></script>
+  </body>
+</html>
